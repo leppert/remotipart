@@ -26,7 +26,10 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "lib/generators/remotipart_generator.rb",
+     "lib/generators/templates/jquery.remotipart.js",
      "lib/remotipart.rb",
+     "remotipart.gemspec",
      "test/helper.rb",
      "test/test_remotipart.rb"
   ]
