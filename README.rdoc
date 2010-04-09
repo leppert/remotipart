@@ -13,48 +13,48 @@ This gem augments the native Rails jQuery remote form function enabling asynchro
 == Installation
 
 1. Install the Remotipart gem
-	gem install remotipart
+  gem install remotipart
 2. Run the Remotipart generator to add jquery.remotipart.js to public/javascripts/
-	rails g remotipart
+  rails g remotipart
 3. Add the Javascript files for jQuery, the Rails jQuery driver, jQuery Form plugin, and Remotipart to your template, making sure to include jquery.remotipart.js *after* the jQuery and the Rails jQuery driver
-	<%= javascript_include_tag 'jquery-1.4.2.min', 'rails', 'jquery.form', 'jquery.remotipart' %>
-	
+  <%= javascript_include_tag 'jquery-1.4.2.min', 'rails', 'jquery.form', 'jquery.remotipart' %>
+  
 == Usage
 
 * For multipart / forms with file inputs, set your form_for to remote as you would for a normal ajax form:
-	:remote => true
+  :remote => true
 * When Javascript is enabled in the user's browser, the form, including the file, will be submitted asynchronously to your controller with:
-	:format == 'js'
+  :format == 'js'
 * In the JS response template for your controller action, wrap all of your response code in one remotipart_response block:
-	<%= remotipart_response do %> All Javascript response code goes here <% end %>
+  <%= remotipart_response do %> All Javascript response code goes here <% end %>
 
 === Example
 
 sample_layout.html.erb
-	<%= form_for @sample, :html => { :multipart => true }, :remote => true do |f| %>
-		<div class="field">
-			<%= f.label :file %>
-			<%= f.file_field :file %>
-		</div>
-		<div class="actions">
-			<%= f.submit %>
-		</div>
-	<% end %>
+  <%= form_for @sample, :html => { :multipart => true }, :remote => true do |f| %>
+    <div class="field">
+      <%= f.label :file %>
+      <%= f.file_field :file %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
 
 sample_controller.rb
-	def create
-		respond_to do |format|
-			if @sample.save
-				format.js
-			end
-		end
-	end
+  def create
+    respond_to do |format|
+      if @sample.save
+        format.js
+      end
+    end
+  end
 
 create.js.erb
-	<%= remotipart_response do %>
-		//Display a Javascript alert
-		alert('success!');
-	<% end %>
+  <%= remotipart_response do %>
+    //Display a Javascript alert
+    alert('success!');
+  <% end %>
 
 == Note on Patches/Pull Requests
  
