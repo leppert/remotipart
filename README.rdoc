@@ -30,7 +30,7 @@ This gem augments the native Rails jQuery remote form function enabling asynchro
 
 === Example
 
-*sample_layout.html.erb*
+sample_layout.html.erb
 	<%= form_for @sample, :html => { :multipart => true }, :remote => true do |f| %>
 		<div class="field">
 			<%= f.label :file %>
@@ -41,7 +41,7 @@ This gem augments the native Rails jQuery remote form function enabling asynchro
 		</div>
 	<% end %>
 
-*sample_controller.rb*
+sample_controller.rb
 	def create
 		respond_to do |format|
 			if @sample.save
@@ -50,7 +50,7 @@ This gem augments the native Rails jQuery remote form function enabling asynchro
 		end
 	end
 
-*create.js.erb*
+create.js.erb
 	<%= remotipart_response do %>
 		//Display a Javascript alert
 		alert('success!');
