@@ -17,7 +17,7 @@ This gem augments the native Rails jQuery remote form function enabling asynchro
 2. Run the Remotipart generator to add jquery.remotipart.js to public/javascripts/
   rails g remotipart
 3. Add the Javascript files for jQuery, the Rails jQuery driver, jQuery Form plugin, and Remotipart to your template, making sure to include jquery.remotipart.js *after* the jQuery and the Rails jQuery driver
-  <%= javascript_include_tag 'jquery-1.4.2.min', 'rails', 'jquery.form', 'jquery.remotipart' %>
+  <%= javascript_include_tag 'jquery-1.4.4.min', 'rails', 'jquery.form', 'jquery.remotipart' %>
   
 == Usage
 
