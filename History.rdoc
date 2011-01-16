@@ -3,18 +3,22 @@
 === 0.2.1 / 2011-01-16
 
 * Minor Enhancements
-	* Added support for passing text_area_tag options to remotipart_response. {GitHub Issue #7}[https://github.com/formasfunction/remotipart/issues#issue/7] - patch by {Todd Eichel}[https://github.com/tfe]
+** Added support for passing text_area_tag options to remotipart_response.
+   {GitHub Issue #7}[https://github.com/formasfunction/remotipart/issues#issue/7] - patch by {Todd Eichel}[https://github.com/tfe]
 
 === 0.2.0 / 2010-12-08
 
 * Bug Fixes
-	* Added support for form action URLs that include GET params. {GitHub Issue #4}[https://github.com/formasfunction/remotipart/issues/closed#issue/4] - initial patch by ramontayag[https://github.com/ramontayag].
-	* Added proper HTML escaping for the remotipart_response textarea content. {GitHub Issue #5}[https://github.com/formasfunction/remotipart/issues/closed#issue/5] - patch by gucki[https://github.com/gucki].
+** Added support for form action URLs that include GET params.
+   {GitHub Issue #4}[https://github.com/formasfunction/remotipart/issues/closed#issue/4] - initial patch by ramontayag[https://github.com/ramontayag].
+** Added proper HTML escaping for the remotipart_response textarea content.
+   {GitHub Issue #5}[https://github.com/formasfunction/remotipart/issues/closed#issue/5] - patch by gucki[https://github.com/gucki].
 
 === 0.1.1 / 2010-08-27
 
 * Bug Fixes
-	* Removed a call to the JS console. {GitHub Issue #1}[https://github.com/formasfunction/remotipart/issues/closed#issue/5] - reported by {Trevor Burnham}[https://github.com/TrevorBurnham].
+** Removed a call to the JS console.
+   {GitHub Issue #1}[https://github.com/formasfunction/remotipart/issues/closed#issue/5] - reported by {Trevor Burnham}[https://github.com/TrevorBurnham].
 
 === 0.1.0 / 2010-04-09
 
