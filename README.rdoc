@@ -7,7 +7,7 @@ This gem augments the native Rails jQuery remote form function enabling asynchro
 
 * {Rails 3}[http://github.com/rails/rails]
 * {jQuery}[http://jquery.com]
-* {The Rails jQuery driver}[http://github.com/rails/jquery-ujs]
+* {The Rails jQuery driver (jquery-ujs)}[http://rubygems.org/gems/jquery-rails] <b>PLEASE NOTE - DUE TO RECENT REFACTORING IN THE MASTER BRANCH OF JQUERY-UJS, YOU MUST USE THE VERSION CURRENTLY DISTRIBUTED WITH THE GEM (0.2.6). A FIX IS ON THE WAY.</b>
 * {The jQuery Form plugin}[http://jquery.malsup.com/form/]
 
 == Installation
