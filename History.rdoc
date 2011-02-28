@@ -1,5 +1,11 @@
 = History
 
+=== 0.3.0 / 2011-02-24
+
+* New Features
+  * Added support for all data-type ajax submissions, not just 'script'. 
+  * Made a little more flexible, so that separate js.erb response templates are no longer needed between remotipart (i.e. multipart) ajax form submissions and regular ajax form submissions, so multiple versions of the same form can now submit to the same action. 
+
 === 0.2.1 / 2011-01-16
 
 * Minor Enhancements
