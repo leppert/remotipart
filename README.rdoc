@@ -7,12 +7,14 @@ This gem augments the native Rails jQuery remote form function enabling asynchro
 
 * {Rails 3}[http://github.com/rails/rails]
 * {jQuery}[http://jquery.com]
-* {The Rails jQuery driver (jquery-ujs)}[https://github.com/rails/jquery-ujs]
-  Which can be installed with the {the jquery-rails gem}[http://rubygems.org/gems/jquery-rails]
-  <b>PLEASE NOTE - DUE TO RECENT REFACTORING IN THE MASTER BRANCH OF JQUERY-UJS, YOU MUST USE THE VERSION CURRENTLY DISTRIBUTED WITH THE GEM (0.2.6). OR YOU CAN DIRECTLY INSTALL {THIS VERSION OF THE JQUERY-UJS}[https://github.com/rails/jquery-ujs/tree/51272c68714748420d8c35984b3e2532ab14f748]. A FIX IS ON THE WAY.</b>
+* {The jquery-rails gem}[http://rubygems.org/gems/jquery-rails], which really just installs {the Rails jQuery driver (jquery-ujs)}[https://github.com/rails/jquery-ujs]
+
+  <b>PLEASE NOTE - DUE TO RECENT REFACTORING IN THE MASTER BRANCH OF JQUERY-UJS, SEE PREREQUISITE BELOW. A FIX IS ON THE WAY.</b>
 * {The jQuery Form plugin}[http://jquery.malsup.com/form/]
 
 == Installation
+
+<b>Prerequisite: Make sure you have a supported jquery-ujs (rails.js) version. To be certain, replace public/javascripts/rails.js with {this version}[https://github.com/rails/jquery-ujs/raw/51272c68714748420d8c35984b3e2532ab14f748/src/rails.js] of rails.js.</b>
 
 1. Install the Remotipart gem
 
@@ -20,7 +22,7 @@ This gem augments the native Rails jQuery remote form function enabling asynchro
 
 2. Run the Remotipart generator to add jquery.remotipart.js to public/javascripts/
 
-	rails g remotipart
+	  rails g remotipart
 
 3. Add the Javascript files for jQuery, the Rails jQuery driver, jQuery Form plugin, and Remotipart to your template, making sure to include jquery.remotipart.js *after* jQuery and the Rails jQuery driver
 
@@ -36,6 +38,23 @@ This gem augments the native Rails jQuery remote form function enabling asynchro
 	<%= remotipart_response do %> All Javascript response code goes here <% end %>
 * The options available to the text_area_tag[http://api.rubyonrails.org/classes/ActionView/Helpers/FormTagHelper.html#method-i-text_area_tag] can be passed to remotipart_response for further control over the response. For instance:
 	<%= remotipart_response({:escape => false}) do %> All Javascript response code goes here <% end %>
+* UPDATE: As of v0.3.0, anything inside the +remotipart_response+ block will be rendered normally, unless the request actually did come from a remotipart-submitted form. So <tt>js.erb</tt> responses can be shared between remotipart and non-remotipart forms.
+    <%= remotipart_response do %>
+      if params[:remotipart_submitted]
+        // do one thing
+      else
+        // do another
+      end
+    <% end %>
+* If you need to determine if a particular request was made via a remotipart-enabled form...
+  * from your Rails controller or view:
+
+      if params[:remotipart_submitted]
+  * from your javascript:
+
+      $(form).bind("ajax:success", function(){
+        if ( $(this).data('remotipartSubmitted') )
+      });
 
 === Example
 
