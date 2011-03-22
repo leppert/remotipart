@@ -14,7 +14,9 @@ This gem augments the native Rails jQuery remote form function enabling asynchro
 
 == Installation
 
-<b>Prerequisite: Make sure you have a supported jquery-ujs (rails.js) version. To be certain, replace public/javascripts/rails.js with {this version}[https://github.com/rails/jquery-ujs/raw/51272c68714748420d8c35984b3e2532ab14f748/src/rails.js] of rails.js.</b>
+<b>Prerequisite: Make sure you have a supported jquery-ujs (rails.js) version.</b>
+
+<b>To be certain, replace public/javascripts/rails.js with {this version}[https://github.com/rails/jquery-ujs/raw/51272c68714748420d8c35984b3e2532ab14f748/src/rails.js] of rails.js. Alternatively, follow {these instructions}[https://github.com/formasfunction/remotipart/wiki/Getting-Remotipart-to-work-with-latest-jquery-ujs] to get Remotipart working with the latest jquery-ujs.</b>
 
 1. Install the Remotipart gem
 
@@ -85,7 +87,9 @@ create.js.erb
   <% end %>
 
 == Note on Patches/Pull Requests
- 
+
+<b>If you have a general improvement, optimization, or refactoring, please {read this first}[https://github.com/formasfunction/remotipart/wiki/Refactoring-and-Improving-Remotipart].</b>
+
 * Fork the project.
 * Make your feature addition or bug fix.
 * Add tests for it. This is important so I don't break it in a
