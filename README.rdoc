@@ -9,8 +9,17 @@ This gem augments the native Rails jQuery remote form function enabling asynchro
 * {jQuery}[http://jquery.com]
 * {The jquery-rails gem}[http://rubygems.org/gems/jquery-rails], which really just installs {the Rails jQuery driver (jquery-ujs)}[https://github.com/rails/jquery-ujs]
 
-  <b>PLEASE NOTE - DUE TO RECENT REFACTORING IN THE MASTER BRANCH OF JQUERY-UJS, SEE PREREQUISITE BELOW. A FIX IS ON THE WAY.</b>
+  <b>SEE VERSION COMPATIBILITY BELOW TO MATCH THE CORRECT VERSION OF REMOTIPART.JS TO YOUR VERSION OF RAILS.JS</b>
 * {The jQuery Form plugin}[http://jquery.malsup.com/form/]
+
+== Version Compatibility
+
+<table><tr><th>Remotipart version</th><th>Compatible with rails.js version</th></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+</table>
 
 == Installation
 
@@ -19,12 +28,17 @@ This gem augments the native Rails jQuery remote form function enabling asynchro
 <b>To be certain, replace public/javascripts/rails.js with {this version}[https://github.com/rails/jquery-ujs/raw/51272c68714748420d8c35984b3e2532ab14f748/src/rails.js] of rails.js. Alternatively, follow {these instructions}[https://github.com/formasfunction/remotipart/wiki/Getting-Remotipart-to-work-with-latest-jquery-ujs] to get Remotipart working with the latest jquery-ujs.</b>
 
 1. Install the Remotipart gem
+   * Add this line to your GEMFILE
 
-	gem install remotipart
+    gem 'remotipart'
+
+   * And run
+
+    bundle install
 
 2. Run the Remotipart generator to add jquery.remotipart.js to public/javascripts/
 
-	  rails g remotipart
+	rails g remotipart
 
 3. Add the Javascript files for jQuery, the Rails jQuery driver, jQuery Form plugin, and Remotipart to your template, making sure to include jquery.remotipart.js *after* jQuery and the Rails jQuery driver
 
