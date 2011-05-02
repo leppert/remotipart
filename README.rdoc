@@ -19,11 +19,13 @@ This gem augments the native Rails jQuery remote form function enabling asynchro
   +---------------------------------------------------------------------+
   |        <= 0.3.1          | <= 498b35e24cdb14f2                      |
   |           0.3.2          |  > 498b35e24cdb14f2, <= 7f2acc1811f62877 |
+  |           0.3.3          |  > 7f2acc1811f62877, <= d2abd6f9df4e4a42 |
   +---------------------------------------------------------------------+
 
-*rails.js versions <em>(For a full list of Rails.js versions and diffs, see {Rails jQuery UJS Changelog}[https://github.com/rails/jquery-ujs/blob/master/CHANGELOG.md])</em>:
-* {498b35e24cdb14f2}[https://github.com/rails/jquery-ujs/blob/498b35e24cdb14f2d94486e8a1f4a1f661091426/src/rails.js]
+*rails.js versions <em>(For a full list of Rails.js]versions and diffs, see {Rails jQuery UJS Changelog}[https://github.com/rails/jquery-ujs/blob/master/CHANGELOG.md])</em>:
+* {498b35e24cdb14f2}[https://github.com/rails/jquery-ujs/raw/498b35e24cdb14f2d94486e8a1f4a1f661091426/src/rails.js]
 * {7f2acc1811f62877}[https://github.com/rails/jquery-ujs/raw/7f2acc1811f62877611e16451530728b5e13dbe7/src/rails.js]
+* {d2abd6f9df4e4a42}[https://github.com/rails/jquery-ujs/raw/d2abd6f9df4e4a426c17c218b7d5e05004c768d0/src/rails.js]
 
 == Installation
 
