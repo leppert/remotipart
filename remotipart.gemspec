@@ -19,21 +19,7 @@ Gem::Specification.new do |s|
     "LICENSE",
      "README.rdoc"
   ]
-  s.files = [
-    ".document",
-     ".gitignore",
-     "History.rdoc",
-     "LICENSE",
-     "README.rdoc",
-     "Rakefile",
-     "VERSION",
-     "lib/generators/remotipart_generator.rb",
-     "lib/generators/templates/jquery.remotipart.js",
-     "lib/remotipart.rb",
-     "remotipart.gemspec",
-     "test/helper.rb",
-     "test/test_remotipart.rb"
-  ]
+  s.files        = `git ls-files`.split("\n")
   s.homepage = %q{http://github.com/formasfunction/remotipart}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
