@@ -19,8 +19,13 @@ module Remotipart
         end
       end
 
-      initializer "remotipart.view_helpers" do
-        ActionView::Base.send :include, ViewHelpers
+      initializer "remotipart.view_helper" do
+        ActionView::Base.send :include, RequestHelper
+        ActionView::Base.send :include, ViewHelper
+      end
+
+      initializer "remotipart.controller_helper" do
+        ActionController::Base.send :include, RequestHelper
       end
     end
 
