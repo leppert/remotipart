@@ -47,6 +47,7 @@ task :test => :check_dependencies
 task :default => :test
 
 require 'rake/rdoctask'
+require 'lib/remotipart/rails/version'
 Rake::RDocTask.new do |rdoc|
   version = Remotipart::Rails::VERSION
 
