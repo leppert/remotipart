@@ -8,10 +8,10 @@ begin
     gem.name = "remotipart"
     gem.summary = %Q{Remotipart is a Ruby on Rails gem enabling remote multipart forms (AJAX style file uploads) with jQuery.}
     gem.description = %Q{Remotipart is a Ruby on Rails gem enabling remote multipart forms (AJAX style file uploads) with jQuery.
-    This gem augments the native Rails jQuery remote form function enabling asynchronous file uploads with little to no modification to your application.
+    This gem augments the native Rails 3 jQuery-UJS remote form function enabling asynchronous file uploads with little to no modification to your application.
     }
     gem.email = %w{greg@formasfunction.com steve@alfajango.com}
-    gem.homepage = "http://github.com/formasfunction/remotipart"
+    gem.homepage = "http://www.alfajango.com/blog/remotipart-rails-gem/"
     gem.authors = ["Greg Leppert", "Steve Schwartz"]
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
     gem.version = Remotipart::Rails::VERSION
