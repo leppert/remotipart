@@ -47,7 +47,7 @@ task :default => :test
 
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
-  version = Remotipart::VERSION
+  version = Remotipart::Rails::VERSION
 
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "remotipart #{version}"
