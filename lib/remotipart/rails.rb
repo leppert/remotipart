@@ -1,5 +1,10 @@
 module Remotipart
   module Rails
-    require 'remotipart/rails/railtie' if ::Rails.version < "3.1"
+    if ::Rails.version < "3.1"
+      require 'remotipart/rails/railtie'
+    else
+      require 'remotipart/rails/engine'
+    end
+    require 'remotipart/rails/version'
   end
 end

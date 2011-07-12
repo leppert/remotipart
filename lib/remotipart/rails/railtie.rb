@@ -4,6 +4,9 @@ module Remotipart
 
     class Railtie < ::Rails::Railtie
       config.before_configuration do
+        # Files to be added to :defaults
+        FILES = ['jquery.form', 'jquery.remotipart']
+
         # Figure out where rails.js (aka jquery_ujs.js if install by jquery-rails gem) is
         # in the :defaults array
         position = config.action_view.javascript_expansions[:defaults].index('rails') ||
@@ -11,11 +14,11 @@ module Remotipart
 
         # Merge form.js and then remotipart into :defaults array right after rails.js
         if position && position > 0
-          config.action_view.javascript_expansions[:defaults].insert(position + 1, 'jquery.form', 'jquery.remotipart')
+          config.action_view.javascript_expansions[:defaults].insert(position + 1, *FILES)
         # If rails.js couldn't be found, it may have a custom filename, or not be in the :defaults.
         # In that case, just try adding to the end of the :defaults array.
         else
-          config.action_view.javascript_expansions[:defaults].push('jquery.form', 'jquery.remotipart')
+          config.action_view.javascript_expansions[:defaults].push(*FILES)
         end
       end
 
