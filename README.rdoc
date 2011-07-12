@@ -31,12 +31,12 @@ make sure you have a supported jquery-ujs (rails.js or jquery_ujs.js) version fr
 [2.]
   Run the Remotipart install generator to add jquery.form.js and jquery.remotipart.js to public/javascripts/
 
-	 rails g remotipart:install
+   rails g remotipart:install
 
 [3.]
   The necessary js files will be added to your app's javascript <tt>:defaults</tt>, so make sure the following is in your application layout:
 
-	 <%= javascript_include_tag :defaults %>
+   <%= javascript_include_tag :defaults %>
 
 === Rails 3.1
 
@@ -49,13 +49,13 @@ make sure you have a supported jquery-ujs (rails.js or jquery_ujs.js) version fr
 == Usage
 
 * For multipart / forms with file inputs, set your form_for to remote as you would for a normal ajax form:
-	 :remote => true
+   :remote => true
 * When Javascript is enabled in the user's browser, the form, including the file, will be submitted asynchronously to your controller with:
-	 :format == 'js'
+   :format == 'js'
 * In the JS response template for your controller action, wrap all of your response code in one remotipart_response block:
-	 <%= remotipart_response do %> All Javascript response code goes here <% end %>
+   <%= remotipart_response do %> All Javascript response code goes here <% end %>
 * The options available to the text_area_tag[http://api.rubyonrails.org/classes/ActionView/Helpers/FormTagHelper.html#method-i-text_area_tag] can be passed to remotipart_response for further control over the response. For instance:
-	 <%= remotipart_response({:escape => false}) do %> All Javascript response code goes here <% end %>
+   <%= remotipart_response({:escape => false}) do %> All Javascript response code goes here <% end %>
 * Anything inside the +remotipart_response+ block will be rendered normally, unless the request actually did come from a remotipart-submitted form. So <tt>js.erb</tt> responses can be shared between remotipart and non-remotipart forms.
     <%= remotipart_response do %>
       // do stuff here
