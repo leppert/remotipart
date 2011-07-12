@@ -14,6 +14,7 @@ begin
     gem.homepage = "http://github.com/formasfunction/remotipart"
     gem.authors = ["Greg Leppert", "Steve Schwartz"]
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    gem.version = Remotipart::Rails::VERSION
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
