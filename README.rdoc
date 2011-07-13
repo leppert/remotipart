@@ -43,7 +43,6 @@ make sure you have a supported jquery-ujs (rails.js or jquery_ujs.js) version fr
 [2.]
   The necessary js files will automatically be added to the asset pipeline, so add the following to app/assets/javascripts/application.js (right after <tt>//= require jquery_ujs</tt>):
 
-   //= require jquery.form
    //= require jquery.remotipart
 
 == Usage

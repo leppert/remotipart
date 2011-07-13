@@ -1,6 +1,6 @@
 module Remotipart
   module Rails
     VERSION = "0.4.1"
-    FORMJS_VERSION = "2.82"
+    IFRAMETRANSPORT_VERSION = "07.05.2011"
   end
 end

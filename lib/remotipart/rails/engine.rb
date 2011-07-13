@@ -10,6 +10,7 @@ module Remotipart
 
       initializer "remotipart.controller_helper" do
         ActionController::Base.send :include, RequestHelper
+        ActionController::Base.send :include, Responder
       end
     end
 
