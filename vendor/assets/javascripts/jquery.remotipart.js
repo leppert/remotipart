@@ -35,6 +35,10 @@
           // Second verse, same as the first
           $.rails.ajax(settings);
 
+          //Run cleanup
+          $(this).children("#remotipart_submitted").remove();
+          $(this).removeData('remotipartSubmitted');
+
           // Cancel the jQuery UJS request
           return false;
         })
@@ -42,7 +46,6 @@
         // Keep track that we just set this particular form with Remotipart bindings
         // Note: The `true` value will get over-written with the `settings.dataType` from the `ajax:beforeSend` handler
         .data('remotipartSubmitted', true);
-
     },
 
     teardown: function(form) {

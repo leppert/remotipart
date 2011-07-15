@@ -113,7 +113,7 @@
     // based on the content type returned by the server, without attempting an
     // (unsupported) conversion from "iframe" to the actual type.
     options.dataTypes.shift();
-    debugger;
+    
     if (files.length) {
       // Determine the form the file fields belong to, and make sure they all
       // actually belong to the same form.
@@ -161,6 +161,15 @@
       addedFields.push($("<input type='hidden' name='X-Requested-With'>")
         .attr("value", "IFrame").appendTo(form));
 
+      // Borrowed straight from the JQuery source
+      // Provides a way of specifying the accepted data type similar to HTTP_ACCEPTS
+      accepts = options.dataTypes[ 0 ] && options.accepts[ options.dataTypes[0] ] ?
+        options.accepts[ options.dataTypes[0] ] + ( options.dataTypes[ 0 ] !== "*" ? ", */*; q=0.01" : "" ) :
+        options.accepts[ "*" ]
+
+      addedFields.push($("<input type='hidden' name='X-Http-Accept'>")
+        .attr("value", accepts).appendTo(form));
+
       return {
 
         // The `send` function is called by jQuery when the request should be
@@ -168,7 +177,7 @@
         send: function(headers, completeCallback) {
           iframe = $("<iframe src='javascript:false;' name='iframe-" + $.now()
             + "' style='display:none'></iframe>");
-          debugger
+          
           // The first load event gets fired after the iframe has been injected
           // into the DOM, and is used to prepare the actual submission.
           iframe.bind("load", function() {
@@ -178,14 +187,20 @@
             // actual payload is embedded in a `<textarea>` element, and
             // prepares the required conversions to be made in that case.
             iframe.unbind("load").bind("load", function() {
+              
               var doc = this.contentWindow ? this.contentWindow.document :
                 (this.contentDocument ? this.contentDocument : this.document),
                 root = doc.documentElement ? doc.documentElement : doc.body,
                 textarea = root.getElementsByTagName("textarea")[0],
                 type = textarea ? textarea.getAttribute("data-type") : null;
-              completeCallback(200, "OK", {
-                text: type ? textarea.value : root ? root.innerHTML : null
-              }, "Content-Type: " + (type || "text/html"));
+
+              var status = 200,
+                statusText = "OK",
+                responses = { text: type ? textarea.value : root ? root.innerHTML : null },
+                headers = "Content-Type: " + (type || "text/html")
+
+              completeCallback(status, statusText, responses, headers);
+
               setTimeout(cleanUp, 50);
             });
             
