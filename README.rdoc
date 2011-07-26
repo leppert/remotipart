@@ -51,14 +51,6 @@ make sure you have a supported jquery-ujs (rails.js or jquery_ujs.js) version fr
    :remote => true
 * When Javascript is enabled in the user's browser, the form, including the file, will be submitted asynchronously to your controller with:
    :format == 'js'
-* In the JS response template for your controller action, wrap all of your response code in one remotipart_response block:
-   <%= remotipart_response do %> All Javascript response code goes here <% end %>
-* The options available to the text_area_tag[http://api.rubyonrails.org/classes/ActionView/Helpers/FormTagHelper.html#method-i-text_area_tag] can be passed to remotipart_response for further control over the response. For instance:
-   <%= remotipart_response({:escape => false}) do %> All Javascript response code goes here <% end %>
-* Anything inside the +remotipart_response+ block will be rendered normally, unless the request actually did come from a remotipart-submitted form. So <tt>js.erb</tt> responses can be shared between remotipart and non-remotipart forms.
-    <%= remotipart_response do %>
-      // do stuff here
-    <% end %>
 * If you need to determine if a particular request was made via a remotipart-enabled form...
   * from your Rails controller or view:
 
@@ -92,14 +84,12 @@ sample_controller.rb
   end
 
 create.js.erb
-  <%= remotipart_response do %>
-    // Display a Javascript alert
-    alert('success!');
-    <% if remotipart_submitted? %>
-      alert('submitted via remotipart')
-    <% else %>
-      alert('submitted via native jquery-ujs')
-    <% end %>
+  // Display a Javascript alert
+  alert('success!');
+  <% if remotipart_submitted? %>
+    alert('submitted via remotipart')
+  <% else %>
+    alert('submitted via native jquery-ujs')
   <% end %>
 
 == Note on Patches/Pull Requests
