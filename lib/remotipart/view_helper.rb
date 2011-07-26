@@ -1,13 +1,9 @@
 module Remotipart
   module ViewHelper
+    #No longer used
+    #Retrained to prevent issues while updating
     def remotipart_response(options = {}, &block)
-      content = with_output_buffer(&block)
-      if remotipart_submitted?
-        response.content_type = Mime::HTML
-        text_area_tag('remotipart_response', String.new(content), options)
-      else
-        content
-      end
+      with_output_buffer(&block)
     end
   end
 end

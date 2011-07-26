@@ -4,12 +4,12 @@ module Remotipart
   module Generators
     class InstallGenerator < ::Rails::Generators::Base
 
-      desc "This generator installs Form.js #{Remotipart::Rails::FORMJS_VERSION} and Remotipart #{Remotipart::Rails::VERSION}"
+      desc "This generator installs IframeTransport.js #{Remotipart::Rails::IFRAMETRANSPORT_VERSION} and Remotipart #{Remotipart::Rails::VERSION}"
       source_root File.expand_path('../../../../../vendor/assets/javascripts', __FILE__)
 
-      def install_formjs
-        say_status "copying", "Form.js #{Remotipart::Rails::FORMJS_VERSION}", :green
-        copy_file "jquery.form.js", "public/javascripts/jquery.form.js"
+      def install_iframe_transport
+        say_status "copying", "IframeTransport.js #{Remotipart::Rails::IFRAMETRANSPORT_VERSION}", :green
+        copy_file "jquery.iframe-transport.js", "public/javascripts/jquery.iframe-transport.js"
       end
 
       def install_remotipart

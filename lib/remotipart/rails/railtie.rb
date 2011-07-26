@@ -5,7 +5,7 @@ module Remotipart
     class Railtie < ::Rails::Railtie
       config.before_configuration do
         # Files to be added to :defaults
-        FILES = ['jquery.form', 'jquery.remotipart']
+        FILES = ['jquery.iframe-transport', 'jquery.remotipart']
 
         # Figure out where rails.js (aka jquery_ujs.js if install by jquery-rails gem) is
         # in the :defaults array
@@ -29,6 +29,11 @@ module Remotipart
 
       initializer "remotipart.controller_helper" do
         ActionController::Base.send :include, RequestHelper
+        ActionController::Base.send :include, RenderOverrides
+      end
+
+      initializer "remotipart.include_middelware" do
+        config.app_middleware.insert_after ActionDispatch::ParamsParser, Middleware
       end
     end
 

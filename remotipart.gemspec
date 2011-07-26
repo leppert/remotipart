@@ -32,12 +32,14 @@ Gem::Specification.new do |s|
      "lib/remotipart/rails/engine.rb",
      "lib/remotipart/rails/railtie.rb",
      "lib/remotipart/rails/version.rb",
+     "lib/remotipart/middleware.rb",
      "lib/remotipart/request_helper.rb",
+     "lib/remotipart/render_overrides.rb",
      "lib/remotipart/view_helper.rb",
      "remotipart.gemspec",
      "test/helper.rb",
      "test/test_remotipart.rb",
-     "vendor/assets/javascripts/jquery.form.js",
+     "vendor/assets/javascripts/jquery.iframe-transport.js",
      "vendor/assets/javascripts/jquery.remotipart.js"
   ]
   s.homepage = %q{http://www.alfajango.com/blog/remotipart-rails-gem/}
