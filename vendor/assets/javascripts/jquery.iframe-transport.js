@@ -193,7 +193,7 @@
                 root = doc.documentElement ? doc.documentElement : doc.body,
                 textarea = root.getElementsByTagName("textarea")[0],
                 type = textarea ? textarea.getAttribute("data-type") : null;
-
+              
               var status = 200,
                 statusText = "OK",
                 responses = { text: type ? textarea.value : root ? root.innerHTML : null },
