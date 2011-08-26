@@ -1,5 +1,23 @@
 = History
 
+=== 0.4.2 / 2011-26-08
+
+* Minor Enhancements
+  * Updated to jquery.form.js v2.84
+
+=== 0.4.1 / 2011-07-12
+
+* Minor Enhancements
+  * Updated README and docs
+
+=== 0.4.0 / 2011-07-12
+
+* New Features
+  * Added `remotipart_submitted?` helper method for controllers and views
+  * Added railtie and engine support to add remotipart and dependencies to Rails 3.0 (in the js :defaults) and 3.1 (in the asset pipeline) apps automatically
+* Enhancements
+  * Restructured gem to integrate better with Rails apps
+
 === 0.3.0 / 2011-02-24
 
 * New Features
