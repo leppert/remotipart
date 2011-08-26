@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{remotipart}
-  s.version = "0.4.1"
+  s.version = "0.4.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Greg Leppert", "Steve Schwartz"]
-  s.date = %q{2011-07-12}
+  s.date = %q{2011-08-26}
   s.description = %q{Remotipart is a Ruby on Rails gem enabling remote multipart forms (AJAX style file uploads) with jQuery.
     This gem augments the native Rails 3 jQuery-UJS remote form function enabling asynchronous file uploads with little to no modification to your application.
     }
