@@ -1,3 +1,7 @@
+= NEW REPO
+
+<b>Remotipart has a new home and is now being maintained at https://github.com/JangoSteve/remotipart.</b>
+
 = Remotipart
 
 Remotipart is a Ruby on Rails gem enabling remote multipart forms (AJAX style file uploads) with jQuery.
