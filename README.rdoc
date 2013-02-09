@@ -1,123 +1,13 @@
-= NEW REPO
+= THIS REPOSITORY IS NO LONGER BEING MAINTAINED
 
 <b>Remotipart has a new home and is now being maintained at https://github.com/JangoSteve/remotipart.</b>
 
-= Remotipart
+== Remotipart
 
 Remotipart is a Ruby on Rails gem enabling remote multipart forms (AJAX style file uploads) with jQuery.
 This gem augments the native Rails jQuery remote form function enabling asynchronous file uploads with little to no modification to your application.
 
-{View Homepage and Demos}[http://www.alfajango.com/blog/remotipart-rails-gem/]
-
-== Dependencies
-
-* {Rails 3}[http://github.com/rails/rails]
-* {The jquery-rails gem}[http://rubygems.org/gems/jquery-rails], which really just installs {jQuery}[http://jquery.com] and the {Rails jQuery driver (jquery-ujs)}[https://github.com/rails/jquery-ujs]
-
-== Installation
-
-<b>If you're using an old version of the jquery-rails gem,
-make sure you have a supported jquery-ujs (rails.js or jquery_ujs.js) version from VERSION_COMPATIBILITY.</b>
-
-[1.]
-  Install the Remotipart gem
-
-  * Add this line to your GEMFILE (add the correct version from previous section if needed)
-
-   gem 'remotipart', '~> 0.4'
-
-  * And run
-
-   bundle install
-
-=== Rails 3.0
-
-[2.]
-  Run the Remotipart install generator to add jquery.form.js and jquery.remotipart.js to public/javascripts/
-
-   rails g remotipart:install
-
-[3.]
-  The necessary js files will be added to your app's javascript <tt>:defaults</tt>, so make sure the following is in your application layout:
-
-   <%= javascript_include_tag :defaults %>
-
-=== Rails 3.1
-
-[2.]
-  The necessary js files will automatically be added to the asset pipeline, so add the following to app/assets/javascripts/application.js (right after <tt>//= require jquery_ujs</tt>):
-
-   //= require jquery.form
-   //= require jquery.remotipart
-
-== Usage
-
-* For multipart / forms with file inputs, set your form_for to remote as you would for a normal ajax form:
-   :remote => true
-* When Javascript is enabled in the user's browser, the form, including the file, will be submitted asynchronously to your controller with:
-   :format == 'js'
-* In the JS response template for your controller action, wrap all of your response code in one remotipart_response block:
-   <%= remotipart_response do %> All Javascript response code goes here <% end %>
-* The options available to the text_area_tag[http://api.rubyonrails.org/classes/ActionView/Helpers/FormTagHelper.html#method-i-text_area_tag] can be passed to remotipart_response for further control over the response. For instance:
-   <%= remotipart_response({:escape => false}) do %> All Javascript response code goes here <% end %>
-* Anything inside the +remotipart_response+ block will be rendered normally, unless the request actually did come from a remotipart-submitted form. So <tt>js.erb</tt> responses can be shared between remotipart and non-remotipart forms.
-    <%= remotipart_response do %>
-      // do stuff here
-    <% end %>
-* If you need to determine if a particular request was made via a remotipart-enabled form...
-  * from your Rails controller or view:
-
-      if remotipart_submitted?
-  * from your javascript:
-
-      $(form).bind("ajax:success", function(){
-        if ( $(this).data('remotipartSubmitted') )
-      });
-
-=== Example
-
-sample_layout.html.erb
-  <%= form_for @sample, :html => { :multipart => true }, :remote => true do |f| %>
-    <div class="field">
-      <%= f.label :file %>
-      <%= f.file_field :file %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-  <% end %>
-
-sample_controller.rb
-  def create
-    respond_to do |format|
-      if @sample.save
-        format.js
-      end
-    end
-  end
-
-create.js.erb
-  <%= remotipart_response do %>
-    // Display a Javascript alert
-    alert('success!');
-    <% if remotipart_submitted? %>
-      alert('submitted via remotipart')
-    <% else %>
-      alert('submitted via native jquery-ujs')
-    <% end %>
-  <% end %>
-
-== Note on Patches/Pull Requests
-
-<b>If you have a general improvement, optimization, or refactoring, please {read this first}[https://github.com/formasfunction/remotipart/wiki/Refactoring-and-Improving-Remotipart].</b>
-
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+{View Homepage and Demos}[http://opensource.alfajango.com/remotipart/]
 
 == Copyright
 
