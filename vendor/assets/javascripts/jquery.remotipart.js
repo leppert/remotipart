@@ -62,7 +62,7 @@
     }
   };
 
-  $('form').live('ajax:aborted:file', function(){
+  $(document).on('ajax:aborted:file', 'form', function(){
     var form = $(this);
 
     // Only need to setup form and make form bindings once.
